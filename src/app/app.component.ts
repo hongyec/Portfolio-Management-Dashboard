@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import './film';
 
 @Component({
   selector: 'app-root',
