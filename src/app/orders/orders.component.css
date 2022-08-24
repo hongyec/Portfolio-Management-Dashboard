@@ -1,0 +1,9 @@
+.order-item-container {
+  width: 100%
+}
+
+.order-item-container > * {
+  width: 30%;
+  display: inline-block;
+  margin: 10px;
+}

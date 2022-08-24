@@ -1,0 +1,21 @@
+<div class="order-item">
+  <div>
+      <h2>
+          <a class="caption-left" [routerLink]="['/orderDetail', order.id]">
+              {{ order.id }}
+          </a>
+          <span class="caption-right">
+              {{ order.marketPrice | currency:'GBP':'symbol'}}
+          </span>
+      </h2>
+  </div>
+
+  <div class="caption-normal">{{ order.priceType }}</div>
+
+  <!-- <div class="caption-normal">
+      <app-review [order]="order"></app-review>
+  </div> -->
+
+  <div class="caption-normal">tickerId: {{ order.tickerId }}</div>
+
+</div>
