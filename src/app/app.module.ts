@@ -11,6 +11,7 @@ import { TickersComponent } from './tickers/tickers.component';
 import { TickerComponent } from './ticker/ticker.component';
 import { OrderformComponent } from './orderform/orderform.component';
 import { FormsModule } from '@angular/forms';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     OrderComponent,
     TickersComponent,
     TickerComponent,
-    OrderformComponent
+    OrderformComponent,
+    PortfolioComponent
   ],
   imports: [
     FormsModule,

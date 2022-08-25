@@ -1,13 +1,13 @@
 <div *ngIf="order.status=='open'; then open else complete"></div>
 
 <ng-template #open>
-  <div class="order-item-open">
+  <div class="w3-container w3-pale-green w3-leftbar-green w3-border-green">
     <div>
         <h3>
           <span class="caption-left"> order_id: {{order.id}} &nbsp;</span>
 
-            <a class="caption-left" [routerLink]="['/orderDetail', order.tickerId]">
-                ticker_id: {{ order.id }}
+            <a class="caption-left" [routerLink]="['/tickers']">
+                {{ tickerName[order.tickerId] }}
             </a>
             <span class="caption-right">
                 {{ order.marketPrice | currency:'USD':'symbol'}}
@@ -21,12 +21,13 @@
       <span> price type: {{ order.priceType }},&nbsp;&nbsp;</span>
       <span> status: {{order.status}},&nbsp;&nbsp;</span>
       <span> action: {{ order.action}},&nbsp;&nbsp;</span>
+      <span> market price: {{ order.marketPrice | currency:'USD':'symbol'}} </span>
     </div>
 
     <div class="caption-normal">
-      <span> created Date: {{ order.createdDate }},&nbsp;&nbsp;</span>
+      <span> created Date: {{ order.createdDate | date: 'hh:mm:ss a, d M y' }},&nbsp;&nbsp;</span>
       <!-- <span> completed Date: {{order.completedDate}},&nbsp;&nbsp;</span> -->
-      <span> goodTill: {{ order.completedDate}},&nbsp;&nbsp;</span>
+      <span> goodTill: {{ order.completedDate | date: 'hh:mm:ss a, d M y'}}&nbsp;&nbsp;</span>
     </div>
 
     <!-- <div class="caption-normal">
@@ -37,13 +38,13 @@
 
 
 <ng-template #complete>
-  <div class="order-item-close">
+  <div class="w3-container w3-pale-red w3-leftbar-red w3-border-red">
     <div>
         <h3>
           <span class="caption-left"> order_id: {{order.id}} &nbsp;</span>
 
-            <a class="caption-left" [routerLink]="['/orderDetail', order.tickerId]">
-                ticker_id: {{ order.id }}
+            <a class="caption-left" [routerLink]="['/tickers']">
+              {{ tickerName[order.tickerId] }}
             </a>
             <span class="caption-right">
                 {{ order.marketPrice | currency:'USD':'symbol'}}
@@ -57,11 +58,12 @@
       <span> price type: {{ order.priceType }},&nbsp;&nbsp;</span>
       <span> status: {{order.status}},&nbsp;&nbsp;</span>
       <span> action: {{ order.action}},&nbsp;&nbsp;</span>
+      <span> market price: {{ order.marketPrice | currency:'USD':'symbol'}} </span>
     </div>
 
     <div class="caption-normal">
-      <span> created Date: {{ order.createdDate }},&nbsp;&nbsp;</span>
-      <span> completed Date: {{order.completedDate}},&nbsp;&nbsp;</span>
+      <span> created Date: {{ order.createdDate | date: 'hh:mm:ss a, d M y'}},&nbsp;&nbsp;</span>
+      <span> completed Date: {{order.completedDate | date: 'hh:mm:ss a, d M y'}}&nbsp;&nbsp;</span>
       <!-- <span> goodTill: {{ order.completedDate}},&nbsp;&nbsp;</span> -->
     </div>
 

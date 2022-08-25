@@ -1,11 +1,15 @@
 input[type=number] {
-  width: 75px;
-  text-align: right;
+  width: 90px;
+  text-align: left;
 }
 
 label {
-  width: 120px;
+  width: 150px;
   float: left;
+}
+
+select {
+  width: 100px;
 }
 
 span {

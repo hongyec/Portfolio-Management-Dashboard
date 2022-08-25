@@ -1,1 +1,7 @@
-.navBar {}
+.title {
+  font-family: lato,arial,sans-serif;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  line-height: 1.2;
+}

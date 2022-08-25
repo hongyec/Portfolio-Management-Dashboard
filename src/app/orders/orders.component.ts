@@ -20,26 +20,28 @@ export class OrdersComponent implements OnInit {
 }
 
 export class Order {
-  id: number;
-  createdDate: Date;
-  completedDate: Date;
+  id: number|undefined;
+  createdDate!: Date|undefined;
+  completedDate!: Date|undefined;
   marketPrice: number;
-  goodTill: Date;
+  goodTill!: Date|undefined;
   priceType: PriceType;
   action: ActionType;
   status: any;
   tickerId: number;
+  numShare: number;
 
   constructor(
-    id: number,
-    createdDate: Date,
-    completedDate: Date,
+    id: number|undefined,
+    createdDate: Date|undefined,
+    completedDate: Date|undefined,
     marketPrice: number,
-    goodTill: Date,
+    goodTill: Date|undefined,
     priceType: PriceType,
     action: ActionType,
     status: Status,
-    tickerId: number
+    tickerId: number,
+    numShare: number,
   ) {
     this.id = id;
     this.createdDate = createdDate;
@@ -50,6 +52,7 @@ export class Order {
     this.action = action;
     this.status = status;
     this.tickerId = tickerId;
+    this.numShare = numShare;
   }
 }
 

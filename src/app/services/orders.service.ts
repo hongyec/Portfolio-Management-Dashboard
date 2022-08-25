@@ -15,4 +15,9 @@ export class OrdersService {
   getOrders(): Observable<Array<Order>> {
     return this.http.get(this.baseUrl) as Observable<Array<Order>>;
   }
+
+  createOrder(order: Partial<Order>): void {
+    console.log(order)
+    this.http.post(this.baseUrl, order);
+  }
 }
