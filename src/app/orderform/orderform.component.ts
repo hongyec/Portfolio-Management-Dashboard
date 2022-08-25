@@ -24,22 +24,22 @@ export class OrderformComponent implements OnInit {
   constructor(private tickerService: TickersService, private orderService: OrdersService) { }
 
   create(form: NgForm) {
-    console.log("create Order is", this.orderCreate);
-    console.log("In form", form.value)
 
-    this.orderService.createOrder(this.orderCreate);
+    this.orderService.createOrder(form.value);
+
     form.reset();
+
     this.orderCreate = new Order(
       undefined,
       undefined,
       undefined,
-      4,
+      0,
       undefined,
       PriceType.Market,
       ActionType.BUY,
       Status.OPEN,
-      2,
-      4,
+      1,
+      1,
     );
     this.submitted = true;
   }
@@ -49,14 +49,15 @@ export class OrderformComponent implements OnInit {
       undefined,
       undefined,
       undefined,
-      4,
+      0,
       undefined,
       PriceType.Market,
       ActionType.BUY,
       Status.OPEN,
-      2,
-      4,
+      1,
+      1,
     );
+
     this.tickers = this.tickerService.getTickers();
   }
 }

@@ -12,7 +12,7 @@ import { TickerComponent } from './ticker/ticker.component';
 import { OrderformComponent } from './orderform/orderform.component';
 import { FormsModule } from '@angular/forms';
 import { PortfolioComponent } from './portfolio/portfolio.component';
-
+import { NgApexchartsModule } from "ng-apexcharts";
 
 @NgModule({
   declarations: [
@@ -27,9 +27,10 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
   ],
   imports: [
     FormsModule,
-    HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    NgApexchartsModule
   ],
   providers: [{provide: "IS_VERBOSE_LOGGER", useValue: true}],
   bootstrap: [AppComponent]

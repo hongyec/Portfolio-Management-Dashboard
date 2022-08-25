@@ -20,3 +20,7 @@ form {
   padding: 20px;
   border: 2px solid black;
 }
+
+.row {
+  margin: 10px;
+}

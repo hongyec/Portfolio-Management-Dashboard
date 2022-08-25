@@ -17,7 +17,6 @@ export class OrdersService {
   }
 
   createOrder(order: Partial<Order>): void {
-    console.log(order)
-    this.http.post(this.baseUrl, order);
+    console.log(this.http.post(this.baseUrl, order ).subscribe());
   }
 }

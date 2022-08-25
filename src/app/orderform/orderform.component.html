@@ -1,11 +1,11 @@
 <div [hidden]="submitted">
-  <h1>Create Order:</h1>
-  <pre>{{orderCreate | json}}</pre>
+  <h3>Create Order:</h3>
+  <!-- <pre>{{orderCreate | json}}</pre> -->
   <form #f="ngForm" (ngSubmit)="create(f)">
       <p>
           <label>Ticker:&nbsp;</label>
-          <select [(ngModel)]="orderCreate.tickerId" name="ticker">
-              <option *ngFor="let ticker of tickers|async" [value]="ticker.id">{{ticker.tickerSymbol}}</option>
+          <select [(ngModel)]="orderCreate.tickerId" name="tickerId">
+              <option *ngFor="let ticker of tickers|async" [value]="ticker.id-1">{{ticker.tickerSymbol}}</option>
           </select>
       </p>
 
@@ -27,7 +27,7 @@
       </p>
       <p>
         <label>Action:&nbsp;</label>
-        <select [(ngModel)]="orderCreate.action" name="acton">
+        <select [(ngModel)]="orderCreate.action" name="action">
           <option *ngFor="let action of eAction | keyvalue" [value]="action.value">{{action.value}}</option>
         </select>
       </p>
@@ -48,15 +48,23 @@
 <div [hidden]="!submitted">
   <h2>You submitted the following:</h2>
   <div class="row">
-    <div class="col-xs-3">Name</div>
-    <div class="col-xs-9">{{ orderCreate.numShare }}</div>
+    <div class="col-xs-3">Ticker Id:&nbsp;</div>
+    <div class="col-xs-9">{{ orderCreate.tickerId }}</div>
   </div>
   <div class="row">
-    <div class="col-xs-3">Alter Ego</div>
+    <div class="col-xs-3">Price Type:&nbsp;</div>
     <div class="col-xs-9">{{ orderCreate.priceType }}</div>
   </div>
   <div class="row">
-    <div class="col-xs-3">Power</div>
+    <div class="col-xs-3">Number of Shares:&nbsp;</div>
+    <div class="col-xs-9">{{ orderCreate.numShare }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Market Price:&nbsp;</div>
+    <div class="col-xs-9">{{ orderCreate.marketPrice }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Action:&nbsp;</div>
     <div class="col-xs-9">{{ orderCreate.action }}</div>
   </div>
   <br>
