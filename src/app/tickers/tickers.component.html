@@ -1,0 +1,5 @@
+<div class="ticker-item-container">
+  <div *ngFor="let ticker of tickers | async">
+    <app-ticker [ticker]="ticker"></app-ticker>
+  </div>
+</div>

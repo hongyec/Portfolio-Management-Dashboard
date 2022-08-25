@@ -1,0 +1,9 @@
+.ticker-item-container {
+  width: 100%
+}
+
+.ticker-item-container > * {
+  width: 30%;
+  display: inline-block;
+  margin: 10px;
+}

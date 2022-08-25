@@ -9,7 +9,7 @@ import { Order } from '../orders/orders.component';
 export class OrderComponent implements OnInit {
 
   @Input()
-  order!: Order
+  order!: Order;
 
   ngOnInit(): void {
   }

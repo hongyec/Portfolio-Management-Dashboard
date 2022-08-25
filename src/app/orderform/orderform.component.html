@@ -1,0 +1,39 @@
+<h1>Create Order:</h1>
+
+<form #f="ngForm" (ngSubmit)="create(f)">
+    <p>
+        <label>Product:&nbsp;</label>
+        <select [(ngModel)]="orderCreate.tickerId" name="product">
+            <option *ngFor="let ticker of tickers|async" [value]="ticker.id">{{ticker.id}}</option>
+        </select>
+    </p>
+
+    <p>
+        <label>Price:&nbsp;</label>
+        <input type="number" [(ngModel)]="orderCreate.marketPrice" name="hello" readonly>
+    </p>
+
+    <p>
+        <label>Status:&nbsp;</label>
+        <select [(ngModel)]="orderCreate.status" name="status">
+          <option *ngFor="let status of eStatus | keyvalue" [value]="status.value">{{status.value}}</option>
+      </select>
+    </p>
+    <p>
+      <label>Action:&nbsp;</label>
+      <select [(ngModel)]="orderCreate.action" name="acton">
+        <option *ngFor="let action of eAction | keyvalue" [value]="action.value">{{action.value}}</option>
+      </select>
+    </p>
+
+    <p>
+      <label>Price type:&nbsp;</label>
+      <select [(ngModel)]="orderCreate.priceType" name="priceType">
+        <option *ngFor="let priceType of ePriceType | keyvalue" [value]="priceType.value">{{priceType.value}}</option>
+      </select>
+    </p>
+
+    <p>
+        <button type="submit" [disabled]="!f.valid">create order</button>
+    </p>
+</form>

@@ -3,7 +3,7 @@
 }
 
 .order-item-container > * {
-  width: 30%;
-  display: inline-block;
+  width: 80%;
+  /* display: inline-block; */
   margin: 10px;
 }

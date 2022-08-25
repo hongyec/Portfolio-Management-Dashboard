@@ -1,0 +1,18 @@
+input[type=number] {
+  width: 75px;
+  text-align: right;
+}
+
+label {
+  width: 120px;
+  float: left;
+}
+
+span {
+  font-weight: bold;
+}
+
+form {
+  padding: 20px;
+  border: 2px solid black;
+}

@@ -1,0 +1,30 @@
+
+<div class="ticker-item">
+
+  <img [src]="imageUrl">
+  <div>
+      <h3>
+          <span class="caption-left" >
+              ticker_id: {{ ticker.id }}
+          </span>
+          <span class="caption-right">
+              {{ ticker.price | currency:'USD':'symbol'}}
+          </span>
+      </h3>
+  </div>
+
+  <!-- <div class="caption-normal">tickerId: {{ ticker.tickerId }}</div> -->
+
+  <div class="caption-normal">
+    <span> company name: {{ ticker.companyName }},&nbsp;&nbsp;</span>
+    <span> ticker: {{ticker.tickerSymbol }},&nbsp;&nbsp;</span>
+    <span> timezone: {{ ticker.timezone }},&nbsp;&nbsp;</span>
+  </div>
+
+  <a routerLink="/orderform"><button>buy</button></a>
+  <a routerLink="/orderform"><button>sell</button></a>
+
+</div>
+
+
+

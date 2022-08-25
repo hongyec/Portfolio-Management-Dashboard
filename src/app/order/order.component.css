@@ -1,7 +1,15 @@
-.order-item {
+.order-item-open {
   padding: 10px;
-  background-color: steelblue;
+  background-color: rgb(7, 198, 64);
   color: white;
+  border: 2px solid black;
+}
+
+.order-item-close {
+  padding: 10px;
+  background-color: rgb(199, 45, 6);
+  color: white;
+  border: 2px solid black;
 }
 
 .order-item img {
@@ -16,10 +24,10 @@
   float: left;
 }
 
-.order-item .caption-right {
+.caption-right {
   float: right;
 }
 
 .order-item .caption-normal {
-  clear: both;
+  clear:right
 }

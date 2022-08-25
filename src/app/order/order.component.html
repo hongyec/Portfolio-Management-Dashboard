@@ -1,21 +1,72 @@
-<div class="order-item">
-  <div>
-      <h2>
-          <a class="caption-left" [routerLink]="['/orderDetail', order.id]">
-              {{ order.id }}
-          </a>
-          <span class="caption-right">
-              {{ order.marketPrice | currency:'GBP':'symbol'}}
-          </span>
-      </h2>
+<div *ngIf="order.status=='open'; then open else complete"></div>
+
+<ng-template #open>
+  <div class="order-item-open">
+    <div>
+        <h3>
+          <span class="caption-left"> order_id: {{order.id}} &nbsp;</span>
+
+            <a class="caption-left" [routerLink]="['/orderDetail', order.tickerId]">
+                ticker_id: {{ order.id }}
+            </a>
+            <span class="caption-right">
+                {{ order.marketPrice | currency:'USD':'symbol'}}
+            </span>
+        </h3>
+    </div>
+
+    <!-- <div class="caption-normal">tickerId: {{ order.tickerId }}</div> -->
+
+    <div class="caption-normal">
+      <span> price type: {{ order.priceType }},&nbsp;&nbsp;</span>
+      <span> status: {{order.status}},&nbsp;&nbsp;</span>
+      <span> action: {{ order.action}},&nbsp;&nbsp;</span>
+    </div>
+
+    <div class="caption-normal">
+      <span> created Date: {{ order.createdDate }},&nbsp;&nbsp;</span>
+      <!-- <span> completed Date: {{order.completedDate}},&nbsp;&nbsp;</span> -->
+      <span> goodTill: {{ order.completedDate}},&nbsp;&nbsp;</span>
+    </div>
+
+    <!-- <div class="caption-normal">
+        <app-review [order]="order"></app-review>
+    </div> -->
   </div>
+</ng-template>
 
-  <div class="caption-normal">{{ order.priceType }}</div>
 
-  <!-- <div class="caption-normal">
-      <app-review [order]="order"></app-review>
-  </div> -->
+<ng-template #complete>
+  <div class="order-item-close">
+    <div>
+        <h3>
+          <span class="caption-left"> order_id: {{order.id}} &nbsp;</span>
 
-  <div class="caption-normal">tickerId: {{ order.tickerId }}</div>
+            <a class="caption-left" [routerLink]="['/orderDetail', order.tickerId]">
+                ticker_id: {{ order.id }}
+            </a>
+            <span class="caption-right">
+                {{ order.marketPrice | currency:'USD':'symbol'}}
+            </span>
+        </h3>
+    </div>
 
-</div>
+    <!-- <div class="caption-normal">tickerId: {{ order.tickerId }}</div> -->
+
+    <div class="caption-normal">
+      <span> price type: {{ order.priceType }},&nbsp;&nbsp;</span>
+      <span> status: {{order.status}},&nbsp;&nbsp;</span>
+      <span> action: {{ order.action}},&nbsp;&nbsp;</span>
+    </div>
+
+    <div class="caption-normal">
+      <span> created Date: {{ order.createdDate }},&nbsp;&nbsp;</span>
+      <span> completed Date: {{order.completedDate}},&nbsp;&nbsp;</span>
+      <!-- <span> goodTill: {{ order.completedDate}},&nbsp;&nbsp;</span> -->
+    </div>
+
+    <!-- <div class="caption-normal">
+        <app-review [order]="order"></app-review>
+    </div> -->
+  </div>
+</ng-template>

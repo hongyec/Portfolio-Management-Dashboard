@@ -1,0 +1,24 @@
+.ticker-item {
+  padding: 10px;
+}
+
+.ticker-item img {
+  width: 50%;
+}
+
+.ticker-item div {
+  margin-bottom: 20px;
+}
+
+.ticker-item .caption-left {
+  float: left;
+}
+
+.ticker-item .caption-right {
+  float: right;
+}
+
+.ticker-item .caption-normal {
+  clear: both;
+  font-size: 18px;
+}
